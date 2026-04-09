@@ -21,7 +21,7 @@ The dataset for this project was provided by the company Zeta Surgical, and was 
 ## Methodology - Segmentation
 
 
-For the segmentation leg of this project, first polygon annotations were parsed from the dataset CSV files. The coordinates were converted into binary masks using OpenCV, and multi-view image inputs (stacked channels) were constructed, too. From there, a TensorFlow pipeline was built and a U-Net model was configured, and the model was then trained for segmentation and the task of predicting binary masks. After multiple iterations of the U-Net model were deployed, ResU-Net with residual connections rather than standard convolution layers was also implemented in an attempt to improve model accuracy. Model accuracy was evaluated using Dice coefficient and IoU. 
+For the segmentation leg of this project, first polygon annotations were parsed from the dataset CSV files. The coordinates were converted into binary masks using OpenCV, and multi-view image inputs (stacked channels) were constructed, too. From there, a TensorFlow pipeline was built and a U-Net model was configured, and the model was then trained for segmentation and the task of predicting binary masks. After multiple iterations of the U-Net model were deployed, ResU-Net with residual connections rather than standard convolution layers was also implemented in an attempt to improve model accuracy. Model accuracy was evaluated using Dice coefficient and IoU. A third iteration of modeling included using ROI cropping on the ResU-Net model to address class imbalance in terms of non-hemorrhage matter pixels and hemorrhage pixels (minority class). This allowed the narrowing down of input images to more relevant regions, still containing anatomical context for hemorrhages but also reducing background and healthy brain tissue pixels such that hemorrhages took up a larger percentage of the image.
 
 
 ## Methodology - Classification
@@ -36,17 +36,19 @@ For the hemorrhage classification portion of the project, first, multiple CSV fi
 - U-Net (binary cross entropy loss/BCE)
 - U-Net + BCE + Dice + IoU
 - ResU-Net
+- ResU-Net with ROI cropping
 - Logistic Regression
 - Linear Regression (OLS, Ridge, Lasso)
 - LDA/QDA
 - Random Forest
 - Neural Network/MLP
+- Gradient Boosting Classifier
 
 
 ## Results
 
 
-The BCE-only U-Net model failed in its creation of predictive masks due to accuracy being geared towards pixel-level instead of mask overlap, meaning the predicted probability of each pixel being a hemorrhage was low. At higher thresholds this resulted in blank masks, and at lower thresholds, noisy masks with irrelevant polygon area. Dice-based loss significantly improved image segmentation quality in the U-Net model, though the ResU-Net model showed negligible improvement.
+The BCE-only U-Net model failed in its creation of predictive masks due to accuracy being geared towards pixel-level instead of mask overlap, meaning the predicted probability of each pixel being a hemorrhage was low. At higher thresholds this resulted in blank masks, and at lower thresholds, noisy masks with irrelevant polygon area. Dice-based loss significantly improved image segmentation quality in the U-Net model, though the ResU-Net model showed negligible improvement. ResU-Net with the implementation of ROI cropping, however, significantly outperformeed the other models, leading with a dice coefficient of .76 while the others hovered at .67, indicating the importance of data preprocessing when building models and highlighting that improved model accuracy is not all about increasing the complexity of model architecture. 
 
 
 The classification models initially demonstrated inflated performance due to probable data leakage as well as the deletion of polygon-related features during data cleaning. Once data leakage was fixed, however, and a host of engineered features were introduced, model performance dropped significantly, highlighting the role data leakage plays in falsely high accuracy as well as demonstrating that the engineered spatial features, while assumed to be relevant, were not strong enough to enhance predictions of hemorrhage type. 
@@ -60,7 +62,7 @@ An application was built using Streamlit that allows users to:
 
 - View CT scans
 - Compare true and predicted masks as well as probability maps
-- Switch between U-Net and ResU-Net models
+- Switch between U-Net, ResU-Net, and ResU-Net with ROI cropping models
 - Adjust probability thresholds to observe their impact on mask quality
 
 
