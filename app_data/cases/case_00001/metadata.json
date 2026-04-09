@@ -2,5 +2,11 @@
   "case_name": "case_00001",
   "sample_index": 1,
   "unet_mean_pred": 0.004832944832742214,
-  "resnet_mean_pred": 0.005553377326577902
+  "resnet_mean_pred": 0.005553377326577902,
+  "roi_files_added": true,
+  "roi_pred_mean": 0.14865878224372864,
+  "roi_pred_min": 1.367303866572911e-06,
+  "roi_pred_max": 0.9996500015258789,
+  "origin": "ID_9e79fe2db.jpg",
+  "image_file": "ID_9e79fe2db.jpg"
 }
