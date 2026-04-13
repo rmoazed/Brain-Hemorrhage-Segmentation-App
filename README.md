@@ -72,10 +72,6 @@ It is deployed in the cloud for public access. The link is as follows:
 https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/
 
 
-<img width="1821" height="898" alt="Screenshot 2026-04-07 at 2 09 37 PM" src="https://github.com/user-attachments/assets/5622c647-3f94-43b8-985f-2ddcd437028a" />
-
-
-
 ## How to Run Locally
 
 
