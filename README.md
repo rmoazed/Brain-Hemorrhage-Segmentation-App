@@ -101,6 +101,14 @@ It is deployed in the cloud for public access. If the app has not been recently 
 [See App Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
 
+## Paper
+
+
+Below is a link to the full paper that accompanies this project.
+
+[View PDF Document](Paper/Brain_Hemorrhage_Segmentation_and_Classification_with_Machine_Learning.pdf)
+
+
 ## How to Run Locally
 
 
@@ -114,9 +122,9 @@ It is deployed in the cloud for public access. If the app has not been recently 
 
 
 - app_data -> folder with sample cases for visualization
+- Paper -> folder that contains full paper associated with this project
+- Images -> folder for images included in ReadME
 - brain_hemorrhage_segmentation_explorer.py -> Streamlit app
-- Notebooks -> model deployment
-- Data preprocessing scripts
 
 
 ## Future Improvements
