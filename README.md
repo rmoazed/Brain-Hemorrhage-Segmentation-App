@@ -1,5 +1,5 @@
 # Brain-Hemorrhage-Segmentation-App
-An app for exploring results of predicted binary masks of hemorrhages based on CT scans of the brain with true binary masks.
+An app for exploring results of predicted binary masks of hemorrhages based on CT scans of the brain with true binary masks. If the app has not been recently active, it may take up to 30 seconds to load.
 
 [Explore App and Project Results Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
@@ -95,7 +95,7 @@ An application was built using Streamlit that allows users to:
 - Adjust probability thresholds to observe their impact on mask quality
 
 
-It is deployed in the cloud for public access. The link is as follows:
+It is deployed in the cloud for public access. If the app has not been recently accessed, it may take a maximum of 30 seconds to load. The link is as follows:
 
 
 [See App Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
