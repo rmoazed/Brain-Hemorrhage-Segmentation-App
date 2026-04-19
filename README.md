@@ -4,7 +4,7 @@ An app for exploring results of predicted binary masks of hemorrhages based on C
 ![Explore App and Project Results Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
 
-![Preview of App][interface.pic.png]
+![Preview of App](interface.pic.png)
 
 
 ## Overview
