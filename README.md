@@ -12,6 +12,11 @@ An app for exploring results of predicted binary masks of hemorrhages based on C
 
 In this project a machine learning pipeline was developed for brain hemorrhage analysis from CT scans, and combined methods of computer vision and image segmentation models as well as traditional machine learning approaches. The project focused both on predicting binary masks correlated with five subtypes of hemorrhages as well as hemorrhage classification. At its end, an interactive web application was deployed to visualize results of the project.
 
+The paper that accompanies this project can be read by clicking the link below.
+
+
+[Read Project Paper](Brain_Hemorrhage_Segmenation_and_Classification_with_Machine_Learning.pdf)
+
 
 ## Objectives
 
