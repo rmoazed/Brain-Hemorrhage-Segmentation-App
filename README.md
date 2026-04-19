@@ -4,7 +4,7 @@ An app for exploring results of predicted binary masks of hemorrhages based on C
 ![Explore App and Project Results Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
 
-![Preview of App](interface.pic.png)
+![Preview of App](Images/interface.pic.png)
 
 
 ## Overview
@@ -67,7 +67,7 @@ The final attempt at the classification task was the compilation of a dual-outpu
 The BCE-only U-Net model failed in its creation of predictive masks due to accuracy being geared towards pixel-level instead of mask overlap, meaning the predicted probability of each pixel being a hemorrhage was low. At higher thresholds this resulted in blank masks, and at lower thresholds, noisy masks with irrelevant polygon area. Dice-based loss significantly improved image segmentation quality in the U-Net model, though the ResU-Net model showed negligible improvement. ResU-Net with the implementation of ROI cropping, however, significantly out-performed the other models, leading with a Dice coefficient of .76 while the others hovered at .67, indicating the importance of data preprocessing when building models and highlighting that improved model accuracy is not all about increasing the complexity of model architecture. Adding the active learning step to the ResU-Net with ROI-cropping model did not improve results and scored an identical Dice coefficient, indicating that for this task ROI cropping had already solved the problem the best it could be solved. Below is a graph of the validation and training Dice scores for the ResU-Net with ROI cropping model, showing immediate strong learning of hemorrhage material at the beginning of training and then tapering off as the model reached its limitations. 
 
 
-![Dice curves for ResU-Net with ROI cropping model, showing strong learning at the beginning of training and then a taper as the model reached its limitations](roi_dice_curve.png)
+![Dice curves for ResU-Net with ROI cropping model, showing strong learning at the beginning of training and then a taper as the model reached its limitations](Images/roi_dice_curve.png)
 
 
 The classification models initially demonstrated inflated performance due to probable data leakage as well as the deletion of polygon-related features during data cleaning. Once data leakage was fixed, however, and a host of engineered features were introduced, model performance dropped significantly, highlighting the role data leakage plays in falsely high accuracy as well as demonstrating that the engineered spatial features, while assumed to be relevant, were not strong enough to enhance predictions of hemorrhage type. 
@@ -78,7 +78,7 @@ The reworking of the classification task with features from the ROI-cropped mask
 The dual output model performed the worst out of every iteration, with total class collapse into two classes and the demonstration of the inability to classify and hemorrhages beyond those two types. This is likely because identifying hemorrhage type is heavily reliant on the location of the hemorrhage in the brain, and while the cropping did preserve some minor local anatomical context, global anatomical context was loss, making the classification task extremely difficult. It is also possible that the shared encoder creating competition between the two objectives of classification and segmentation, and that even after a round of reweighting the loss functions to force the model to focus more on classification, it was not enough to overcome the issue. Below is a normalized confusion matrix of the dual-output model showing the class collapse.
 
 
-![Normalized confusion matrix for dual-output model showing class collapse into epidural and intraparenchymal hemorrhages, with the frequent misclassification of the multiple class with intraparenchymal](confusion_matrix_dual_output_normalized.png)
+![Normalized confusion matrix for dual-output model showing class collapse into epidural and intraparenchymal hemorrhages, with the frequent misclassification of the multiple class with intraparenchymal](Images/confusion_matrix_dual_output_normalized.png)
 
 
 
