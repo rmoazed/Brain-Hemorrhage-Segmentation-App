@@ -98,7 +98,7 @@ An application was built using Streamlit that allows users to:
 It is deployed in the cloud for public access. The link is as follows:
 
 
-[See App Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
+[See App Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
 
 ## How to Run Locally
