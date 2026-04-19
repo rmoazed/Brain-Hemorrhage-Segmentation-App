@@ -106,7 +106,7 @@ It is deployed in the cloud for public access. If the app has not been recently 
 
 Below is a link to the full paper that accompanies this project.
 
-[View PDF Document](Paper/Brain_Hemorrhage_Segmentation_and_Classification_with_Machine_Learning.pdf)
+[Read Project Paper](Paper/Brain_Hemorrhage_Segmentation_and_Classification_with_Machine_Learning.pdf)
 
 
 ## How to Run Locally
