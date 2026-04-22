@@ -1,5 +1,5 @@
-# Brain-Hemorrhage-Segmentation-App
-An app for exploring results of predicted binary masks of hemorrhages based on CT scans of the brain with true binary masks. If the app has not been recently active, it may take up to 30 seconds to load.
+# Brain Hemorrhage Segmentation App
+An app for exploring results of predicted binary masks of hemorrhages based on CT scans of the brain with true binary masks. If the app has not been recently active, it may take up to 30 seconds to load or the pressing of the reactivation button.
 
 [Explore App and Project Results Here](https://brain-hemorrhage-segmentation-app-fxuflb7mf9tyusncpubyjp.streamlit.app/)
 
